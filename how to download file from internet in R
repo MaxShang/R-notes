@@ -1,0 +1,5 @@
+
+#how to download file from internet in R
+fileurl<-"https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?accessType=DOWNLOAD"
+download.file(url = fileurl,destfile ="cameras.csv" )
+list.files()
