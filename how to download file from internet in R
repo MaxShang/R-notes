@@ -10,7 +10,9 @@ dateDownloaded<-date()
 dateDownloaded
 
 
-#read Excel file 
+##read Excel file 
+#XLConnect package has more options for writing and manipulating Excel files
+#XLConnect vignette is a good place to start for this package
 install.packages("xlsx")
 library(xlsx) #SEEMS like this package is not working
 if(!file.exists("data")){dir.create("data")}
