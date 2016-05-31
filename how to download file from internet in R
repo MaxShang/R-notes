@@ -1,8 +1,26 @@
 
 #how to download file from internet in R
+#create a directory named data to store data file
+if(!file.exists("data")){dir.create("data")}
 fileurl<-"https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?accessType=DOWNLOAD"
-download.file(url = fileurl,destfile ="cameras.csv" )
+download.file(url = fileurl,destfile ="data/cameras.csv" )
 list.files()
 
 dateDownloaded<-date()
 dateDownloaded
+
+
+#read Excel file 
+install.packages("xlsx")
+library(xlsx) #SEEMS like this package is not working
+if(!file.exists("data")){dir.create("data")}
+fileurl<-"https://data.baltimorecity.gov/api/views/dz54-2aru/rows.xlsx?accessType=DOWNLOAD"
+download.file(url = fileurl,destfile ="data/camerasexcl.xlsv" )
+list.files()
+
+dateDownloaded<-date()
+dateDownloaded
+
+camExcel<-read.xlsx("data/camerasexcl.xlsv",sheetIndex=1,header=TRUE)
+head(camExcel)
+
